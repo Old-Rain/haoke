@@ -1,0 +1,21 @@
+html,
+body {
+  padding: 0;
+  height: 100%;
+  background: #fff;
+  color: #333;
+  font-family: "Microsoft Yahei";
+  font-size: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100%;
+}
+.App {
+  height: 100%;
+  padding-bottom: 50px;
+}

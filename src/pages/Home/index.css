@@ -1,0 +1,12 @@
+.home {
+  height: 100%;
+  overflow: auto;
+}
+.tar-bar-wrap {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.iconfont {
+  font-size: 20px;
+}
