@@ -1,11 +1,12 @@
 .home {
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
 }
 .tar-bar-wrap {
   position: fixed;
   bottom: 0;
   width: 100%;
+  max-width: 750px;
 }
 .iconfont {
   font-size: 20px;

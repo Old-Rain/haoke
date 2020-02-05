@@ -1,10 +1,11 @@
-// index.js相当于Vue的main.js
+// index.js（入口文件）相当于Vue的main.js
 
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 
-import 'antd-mobile/dist/antd-mobile.css'
+// import 'antd-mobile/dist/antd-mobile.css'
+import 'react-virtualized/styles.css'
 import './index.css'
 
 ReactDOM.render(<App />, document.getElementById('root'))

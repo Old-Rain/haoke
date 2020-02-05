@@ -1,0 +1,28 @@
+.myRent {
+  .listWrap {
+    padding-top: 45px;
+    margin: 0 15px;
+    .add {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 46px;
+      line-height: 46px;
+      background: #21b97a;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px 1px rgba(122, 122, 122, 0.2);
+      text-align: center;
+      color: #fff;
+    }
+  }
+  .notHouse {
+    padding-top: 80px;
+    text-align: center;
+    img {
+      width: 118px;
+    }
+    .publish {
+      color: #21b97a;
+    }
+  }
+}

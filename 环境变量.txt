@@ -1,0 +1,9 @@
+.env.development 开发环境变量
+.env.production 生产环境变量
+
+格式
+REACT_APP_XXX = ****** 
+
+可以在src目录下的js中通过process.env.REACT_APP_XXX获取到
+
+配置好后需要重启脚手架

@@ -1,0 +1,21 @@
+.wrap {
+  margin: 0 15px;
+  overflow: hidden;
+  .item {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+    width: 20%;
+    height: 48px;
+    border: 1px;
+    i {
+      margin-bottom: 8px;
+    }
+  }
+  .check {
+    color: #21b97a;
+  }
+}

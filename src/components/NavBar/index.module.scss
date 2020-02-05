@@ -1,0 +1,27 @@
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+    transform-origin: 0 1px;
+    transform: scaleY(0.5);
+  }
+  & :global(.am-navbar-light) { // 全局样式用:global()包起来，层级不够还是需要嵌套……（捂脸）
+    background: #f6f5f6;
+  }
+  & :global(.am-icon-md) {
+    width: 30px;
+    height: 30px;
+  }
+  & :global(.am-navbar) {
+    color: #333;
+  }
+}

@@ -1,0 +1,245 @@
+.detail {
+  height: 100%;
+  overflow: auto;
+  .navWrap {
+    position: absolute;
+    z-index: 1;
+    &::after {
+      height: 0;
+    }
+    .navContent {
+      background: transparent;
+      color: #fff;
+    }
+  }
+
+  @mixin line {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+  }
+  @mixin topLine {
+    &::before {
+      @include line;
+      top: 0;
+      transform-origin: 0 0;
+      transform: scaleY(0.5);
+    }
+  }
+  @mixin bottomLine {
+    &::after {
+      @include line;
+      bottom: 0;
+      transform-origin: 0 1px;
+      transform: scaleY(0.5);
+    }
+  }
+
+  // 基本信息
+  .baseInfo {
+    padding: 15px;
+    .title {
+      font-size: 16px;
+    }
+    .tagsWrap {
+      margin: 10px 0;
+    }
+    .info1 {
+      position: relative;
+      display: flex;
+      margin: 15px 0;
+      padding: 15px 0;
+      @include topLine();
+      @include bottomLine();
+      .info1Item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .info1Top {
+          line-height: 26px;
+          font-size: 18px;
+          font-weight: bold;
+          color: #fa5714;
+          span {
+            font-size: 12px;
+            font-weight: normal;
+          }
+        }
+        .info1Bottom {
+          line-height: 26px;
+          font-size: 14px;
+          color: #999;
+        }
+      }
+    }
+    .info2 {
+      overflow: hidden;
+      .info2Item {
+        float: left;
+        padding-left: 10px;
+        width: 50%;
+        line-height: 26px;
+        font-size: 13px;
+        span:nth-child(1) {
+          margin-right: 8px;
+          color: #999;
+        }
+      }
+    }
+  }
+
+  // 地图
+  .map {
+    padding-top: 10px;
+    background: #f2f2f2;
+    .title {
+      padding: 0 15px;
+      line-height: 44px;
+      font-size: 14px;
+      background: #fff;
+    }
+    .content {
+      height: 145px;
+      background: lightgreen;
+      .BMapLabel {
+        background: rgb(238, 93, 91);
+      }
+      .sharp {
+        position: absolute;
+        left: 14px;
+        top: 22px;
+        width: 11px;
+        height: 10px;
+        background: url('http://map.baidu.com/fwmap/upload/r/map/fwmap/static/house/images/label.png')
+          no-repeat 0 0;
+      }
+    }
+  }
+
+  .line10px {
+    height: 10px;
+    background: #f2f2f2;
+  }
+  @mixin marginAround {
+    margin: 0 15px;
+  }
+  @mixin title {
+    margin-bottom: 10px;
+    background: #fff;
+    line-height: 48px;
+    font-size: 15px;
+    font-weight: bold;
+    @include bottomLine();
+  }
+
+  // 房屋配套 房源概况
+  .house {
+    .title {
+      position: relative;
+      @include marginAround();
+      @include title();
+    }
+    .content {
+      @include marginAround();
+      line-height: 36px;
+      font-size: 14px;
+    }
+    .author {
+      margin: 15px;
+      display: flex;
+      align-items: center;
+      img {
+        width: 52px;
+        height: 52px;
+      }
+      .attestation {
+        flex: 1;
+        padding-left: 12px;
+        p {
+          margin: 0;
+          line-height: 26px;
+          font-size: 14px;
+          &:nth-child(2) {
+            color: #fa5741;
+            font-size: 12px;
+            i {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      button {
+        width: 72px;
+        line-height: 28px;
+        background: transparent;
+        border: 1px solid #33be85;
+        color: #33be85;
+        font-size: 14px;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  // 猜你喜欢
+  .like {
+    .title {
+      position: relative;
+      @include marginAround();
+      @include title();
+      margin-bottom: 0;
+    }
+    .content {
+      @include marginAround();
+    }
+  }
+
+  // 底部3按钮
+  .bottomBtnX3 {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 750px;
+    height: 50px;
+    background: #fff;
+    color: #999;
+    @include topLine();
+    .bottomBtnItem {
+      flex: 1;
+      line-height: 50px;
+      text-align: center;
+      font-size: 16px;
+      &:nth-child(1) {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          margin-right: 8px;
+          width: 16px;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 1px;
+          height: 50px;
+          background: #ddd;
+          transform-origin: 1px 0;
+          transform: scaleX(0.5);
+        }
+      }
+      &:nth-child(3) {
+        background: #21b97a;
+        color: #fff;
+      }
+    }
+  }
+}

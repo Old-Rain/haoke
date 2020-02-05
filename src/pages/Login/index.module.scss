@@ -1,0 +1,90 @@
+.login {
+  // 顶部导航
+  .navWrapClass {
+    &::after {
+      height: 0;
+    }
+    .navContent {
+      background: transparent;
+    }
+  }
+
+  @mixin marginAround {
+    margin: 0 15px;
+  }
+  @mixin line {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+  }
+  @mixin topLine {
+    &::before {
+      @include line;
+      top: 0;
+      transform-origin: 0 0;
+      transform: scaleY(0.5);
+    }
+  }
+  @mixin bottomLine {
+    &::after {
+      @include line;
+      bottom: 0;
+      transform-origin: 0 1px;
+      transform: scaleY(0.5);
+    }
+  }
+
+  // 表单
+  .form {
+    @include marginAround();
+    padding-top: 80px;
+    margin-bottom: 20px;
+    p {
+      position: relative;
+      margin: 0;
+      line-height: 66px;
+      font-size: 16px;
+      @include bottomLine();
+      input {
+        padding: 0;
+        border: 0;
+        width: 100%;
+        line-height: 32px;
+        &::placeholder {
+          color: #ccc;
+        }
+      }
+    }
+    .error {
+      display: block;
+      height: 24px;
+      line-height: 24px;
+      color: red;
+    }
+    [type='submit'] {
+      display: block;
+      margin-top: 24px;
+      width: 100%;
+      line-height: 48px;
+      font-size: 18px;
+      text-align: center;
+      border: 0;
+      border-radius: 2px;
+      background: rgb(28, 182, 118);
+      color: #fff;
+    }
+  }
+
+  // “注册”
+  .toLogin {
+    text-align: center;
+    font-size: 14px;
+    .green {
+      font-style: normal;
+      color: rgb(28, 182, 118);
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.picker {
+  // display: none;
+  display: block;
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+  left: 0;
+  top: 40px;
+  & :global(.am-picker) {
+    background: #fff;
+  }
+}

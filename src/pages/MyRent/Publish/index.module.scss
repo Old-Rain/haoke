@@ -1,0 +1,119 @@
+.publish {
+  padding-top: 45px;
+  height: 100%;
+  overflow: auto;
+  background: #f2f2f2;
+
+  .navWrap {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 750px;
+    z-index: 999;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    font-size: 14px;
+    &::placeholder {
+      color: #ccc;
+    }
+  }
+  textarea {
+    height: 125px;
+    resize: none;
+  }
+
+  .list {
+    margin-bottom: 12px;
+    background: #fff;
+    & :global(.am-list-header) {
+      position: relative;
+      padding: 6px 0 0;
+      margin: 0 15px;
+      width: auto;
+      line-height: 36px;
+      color: #21b97a;
+      font-size: 15px;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background: #21b97a;
+      }
+    }
+    & :global(.am-list-body) {
+      border: 0;
+      &::after,
+      &::before {
+        height: 0;
+      }
+      & :global(.am-list-item) {
+        padding: 0 15px;
+        & :global(.am-list-line) {
+          padding: 0;
+          & :global(.am-list-content) {
+            display: flex;
+            justify-content: space-between;
+          }
+          & :global(.am-list-extra) {
+            color: #999;
+            font-size: 14px;
+            line-height: 1;
+          }
+          & :global(.am-list-arrow) {
+            width: 14px;
+            height: 14px;
+            margin-left: 4px;
+          }
+          & :global(.am-image-picker) {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .key {
+      display: flex;
+      width: 56px;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #666;
+    }
+    .extra {
+      width: 56px;
+      color: #999;
+      text-align: right;
+      font-size: 14px;
+    }
+    .inputWrap {
+      width: 50%;
+      input {
+        padding-right: 40px;
+        color: #fa5714;
+        text-align: right;
+      }
+    }
+    .emptyLine_h10px {
+      height: 10px;
+    }
+    .emptyLine_h4px {
+      height: 4px;
+    }
+  }
+
+  .footer {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 750px;
+    height: 50px;
+  }
+}

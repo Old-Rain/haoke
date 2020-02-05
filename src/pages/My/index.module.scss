@@ -1,0 +1,86 @@
+.my {
+  // 信息面板
+  .infoBoard {
+    position: absolute;
+    left: 50%;
+    top: 130px;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 160px;
+    background: #fff;
+    box-shadow: 0 0 4px 4px rgba(166, 166, 166, 0.2);
+    border-radius: 4px;
+    .avatar {
+      position: absolute;
+      overflow: hidden;
+      left: 50%;
+      top: -35px;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 70px;
+      background: #fff;
+      border: 5px solid #f5f5f5;
+      border-radius: 50%;
+      box-shadow: 0 4px 2px 0 rgba(166, 166, 166, 0.4);
+    }
+    span,
+    button {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 13px;
+    }
+    span {
+      margin-top: 50px;
+      line-height: 22px;
+    }
+    button {
+      margin-top: 20px;
+      line-height: 30px;
+      padding: 0 15px;
+      background: #21b97a;
+      border: 0;
+      border-radius: 5px;
+      color: #fff;
+      &:active {
+        background: #0aa465;
+        color: #ccc;
+      }
+    }
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      i {
+        font-style: normal;
+        color: #999;
+        &:nth-child(2) {
+          font-size: 16px;
+          transform: rotate(-90deg);
+        }
+      }
+      
+    }
+  }
+
+  // 菜单
+  .menus {
+    margin-top: 120px;
+    .menuItem {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 13px;
+      color: #333;
+      i {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  // 广告
+  .ad {
+    margin: 20px 24px 0;
+  }
+}

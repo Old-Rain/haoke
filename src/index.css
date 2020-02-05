@@ -4,12 +4,17 @@ body {
   height: 100%;
   background: #fff;
   color: #333;
-  font-family: "Microsoft Yahei";
+  font-family: 'Microsoft Yahei';
   font-size: 12px;
+}
+body {
+  max-width: 750px;
+  margin: 0 auto;
 }
 
 * {
   box-sizing: border-box;
+  touch-action: pan-y;
 }
 
 #root {
@@ -18,4 +23,38 @@ body {
 .App {
   height: 100%;
   padding-bottom: 50px;
+}
+img {
+  display: block;
+  width: 100%;
+}
+dl,
+dt,
+dd,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.swiper-img {
+  position: relative;
+}
+.swiper-img img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.am-modal-button-group-h.am-modal-button-group-normal
+  .am-modal-button:nth-child(2) {
+  color: #21b97a;
+}
+
+.am-picker-popup-header-left,
+.am-picker-popup-header-right,
+.am-search-cancel {
+  color: #21b97a;
 }
