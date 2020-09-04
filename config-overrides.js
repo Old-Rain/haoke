@@ -38,7 +38,7 @@ module.exports = override(
     style: 'css'
   }),
   config => {
-    console.log(config)
+    // console.log(config)
     config.optimization.minimizer = [...config.optimization.minimizer, myTerser]
     return config
   }

@@ -1,11 +1,6 @@
 import React from 'react'
 
-import {
-  List as VList,
-  AutoSizer,
-  WindowScroller,
-  InfiniteLoader
-} from 'react-virtualized'
+import { List as VList, AutoSizer, WindowScroller, InfiniteLoader } from 'react-virtualized'
 
 import { Toast } from 'antd-mobile'
 
@@ -26,25 +21,25 @@ class FindHouse extends React.Component {
       positionValue: '', // 初始化当前城市code值
       list: [], // 初始化筛选结果
       count: 0, // 初始化筛选结果数量
-      isLoading: false // 判断是否加载中，控制空页面的显示
+      isLoading: false, // 判断是否加载中，控制空页面的显示
     }
 
     // 初始化filters
     this.filters = {}
   }
-  setPositionValue = value => {
+  setPositionValue = (value) => {
     this.setState(() => {
       return {
-        positionValue: value
+        positionValue: value,
       }
     })
   }
-  toPages = pahtname => {
+  toPages = (pahtname) => {
     this.props.history.push(pahtname)
   }
 
   // 获取筛选项并查询筛选结果
-  onFilter = filters => {
+  onFilter = (filters) => {
     this.filters = filters
     this.searchHouses()
   }
@@ -59,19 +54,23 @@ class FindHouse extends React.Component {
         cityId: value,
         ...this.filters,
         start: 1,
-        end: 20
-      }
+        end: 20,
+      },
     })
+
     console.log(res)
+    
     const { list, count } = res.body
     this.state.isLoading = false
     Toast.hide()
+
     if (count !== 0) {
       Toast.info('共找到' + count + '套房源', 2, null, true)
     }
+
     this.setState({
       list,
-      count
+      count,
     })
   }
 
@@ -79,8 +78,9 @@ class FindHouse extends React.Component {
   rowRenderer = ({
     key, // Unique key within array of rows 当前项的key
     index, // Index of row within collection 当前项的索引
-    style // Style object to be applied to row (to position it) 默认样式
+    style, // Style object to be applied to row (to position it) 默认样式
   }) => {
+    console.log('昂贵的计算');
     if (!this.state.list[index])
       // 如果list中当前索引项不存在，则渲染一个遮罩
       return (
@@ -88,7 +88,14 @@ class FindHouse extends React.Component {
           <p></p>
         </div>
       )
-    return <HouseItem style={style} key={key} item={this.state.list[index]} onClick={() => this.toPages('/detail/' + this.state.list[index].houseCode)} />
+    return (
+      <HouseItem
+        style={style}
+        key={key}
+        item={this.state.list[index]}
+        onClick={() => this.toPages('/detail/' + this.state.list[index].houseCode)}
+      />
+    )
   }
 
   // 用来判断列表中的每一行是否加载完成
@@ -106,21 +113,21 @@ class FindHouse extends React.Component {
     // stopIndex = startIndex + minimumBatchSize（InfiniteLoader中设置的每次加载数量）
     console.log(startIndex, stopIndex)
     const { value } = JSON.parse(sessionStorage.getItem('hkzf_city'))
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       API.get('/houses', {
         params: {
           cityId: value,
           ...this.filters,
           start: startIndex,
-          end: stopIndex
-        }
-      }).then(res => {
+          end: stopIndex,
+        },
+      }).then((res) => {
         console.log(res)
 
         // 将新获取的数据添加到list
         this.setState(() => {
           return {
-            list: [...this.state.list, ...res.data.body.list]
+            list: [...this.state.list, ...res.data.body.list],
           }
         })
 
@@ -162,6 +169,7 @@ class FindHouse extends React.Component {
                       rowCount={count} // 设置总行数
                       rowHeight={120} // 动态设置行高
                       rowRenderer={this.rowRenderer} // 需要渲染内容
+                      onRowsRendered={(index) => console.log('indexindexindex', index)} // 滚动时返回列表项位置的个索引
                     />
                   )}
                 </AutoSizer>
