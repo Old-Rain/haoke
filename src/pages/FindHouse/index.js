@@ -59,7 +59,7 @@ class FindHouse extends React.Component {
     })
 
     console.log(res)
-    
+
     const { list, count } = res.body
     this.state.isLoading = false
     Toast.hide()
@@ -80,7 +80,7 @@ class FindHouse extends React.Component {
     index, // Index of row within collection 当前项的索引
     style, // Style object to be applied to row (to position it) 默认样式
   }) => {
-    console.log('昂贵的计算');
+    console.log('昂贵的计算')
     if (!this.state.list[index])
       // 如果list中当前索引项不存在，则渲染一个遮罩
       return (
@@ -165,7 +165,6 @@ class FindHouse extends React.Component {
                       height={height}
                       isScrolling={isScrolling}
                       scrollTop={scrollTop}
-                      onRowsRendered={onRowsRendered}
                       rowCount={count} // 设置总行数
                       rowHeight={120} // 动态设置行高
                       rowRenderer={this.rowRenderer} // 需要渲染内容
